@@ -427,6 +427,9 @@
 
         .grid-cols-3 {
             grid-template-columns: repeat(3, 1fr);
+        } 
+        .grid-cols-4 {
+            grid-template-columns: repeat(4, 1fr);
         }
 
         @media (max-width: 768px) {
@@ -723,22 +726,59 @@
             }
         }
 
-        .profile-pic {
-            position: fixed;
-            top: 65px;  /* Distance from top */
-            left: 50px; /* Distance from left */
-            width: 200px;
-            height: 200px;
-            border-radius: 50%; /* Makes it round */
-            object-fit: cover;  /* Keeps aspect ratio */
-            border: 3px solid rgb(49, 36, 217);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-            z-index: 9999; /* Always on top */
-            transition: transform 0.3s ease;
-        }
-        .profile-pic:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
-        }
+     .profile-pic {
+    position: fixed;
+    top: 65px;  
+    left: 50px; 
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;  
+    border: 3px solid rgb(49, 36, 217);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+.card-title a {
+  color: inherit;            /* Take color from h3 */
+  text-decoration: none;     /* Remove underline */
+}
+
+.card-title a:hover {
+  text-decoration: underline; /* Optional hover underline */
+}
+
+.profile-pic:hover {
+    transform: scale(1.1);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+        top: 20px;
+        left: 20px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .profile-pic {
+        width: 90px;
+        height: 90px;
+        top: 15px;
+        left: 15px;
+    }
+}
+a.link{
+    text-decoration: none;
+    
+}
+a.link:hover{
+    text-decoration: underline;
+   text-decoration-color: rgb(38, 8, 208);
+}
     </style>
 </head>
 <body>
@@ -810,16 +850,17 @@
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
                     </a>
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/AJAYMOHAN3" class="social-link" aria-label="GitHub">
                         <svg class="icon" viewBox="0 0 24 24">
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                         </svg>
                     </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
-                        <svg class="icon" viewBox="0 0 24 24">
-                            <path d="m4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                        </svg>
-                    </a>
+                   <a href="https://instagram.com/_ajaymohan_" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+    <svg class="icon" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm-4.25 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/>
+    </svg>
+</a>
+
                 </div>
             </div>
 
@@ -871,9 +912,10 @@
                             <h4 style="font-weight: 600; color: var(--foreground); margin-bottom: 0.5rem;">
                                 Bachelor of Technology in Computer Science & Engineering
                             </h4>
+                            <a href="https://sjcetpalai.ac.in/"   class="link" >
                             <p class="text-muted">
                                 St. Joseph's College of Engineering and Technology, Palai
-                            </p>
+                            </p></a>
                         </div>
                         
                         <div class="timeline-item">
@@ -889,9 +931,10 @@
                             <h4 style="font-weight: 600; color: var(--foreground); margin-bottom: 0.5rem;">
                                 Higher Secondary Education
                             </h4>
+                            <a href="https://www.bhavansvelloor.ac.in/" class="link">
                             <p class="text-muted">
-                                Bhavans Newsprint Vidyalaya, Velloor
-                            </p>
+                               Bhavans Newsprint Vidyalaya, Velloor
+                            </p></a>
                         </div>
                     </div>
                 </div>
@@ -1002,7 +1045,9 @@
                         <span class="badge">Git</span>
                         <span class="badge">VS Code</span>
                         <span class="badge">RESTful APIs</span>
-                        <span class="badge">Browser Extensions</span>
+                        <span class="badge">Nmap</span>
+                        <span class="badge">Wireshark </span>
+                        <span class="badge">Squid </span>
                     </div>
                 </div>
 
@@ -1023,8 +1068,8 @@
                     <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
                         <span class="badge">MySQL</span>
                         <span class="badge">Firebase</span>
-                        <span class="badge">DBMS Operations</span>
-                        <span class="badge">Data Management</span>
+                        <span class="badge">MongoDB</span>
+                        <span class="badge">Supabase</span>
                     </div>
                 </div>
 
@@ -1049,7 +1094,8 @@
                         <span class="badge">OOP</span>
                         <span class="badge">Data Hashing (SHA-256)</span>
                         <span class="badge">Problem Solving</span>
-                        <span class="badge">Team Collaboration</span>
+                        <span class="badge">Blokchain</span>
+                        <span class="badge">DAG</span>
                     </div>
                 </div>
             </div>
@@ -1297,6 +1343,8 @@
                     </div>
                 </div>
             </div>
+            
+           
 
             <div class="mt-16" style="text-align: center;">
                 <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2); max-width: 64rem; margin: 0 auto;">
@@ -1308,10 +1356,13 @@
                         </p>
                     </div>
                 </div>
+            
             </div>
         </div>
+
     </section>
 
+    
     <!-- Projects Section -->
     <section id="projects" class="section-padding">
         <div class="container">
@@ -1331,20 +1382,7 @@
                                 <path d="M6 9l6 6 6-6"/>
                             </svg>
                         </div>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                            </button>
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                    <polyline points="15,3 21,3 21,9"/>
-                                    <line x1="10" y1="14" x2="21" y2="3"/>
-                                </svg>
-                            </button>
-                        </div>
+                        
                     </div>
                     
                     <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Smart India Hackathon Project</h3>
@@ -1395,20 +1433,7 @@
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                             </svg>
                         </div>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                            </button>
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                    <polyline points="15,3 21,3 21,9"/>
-                                    <line x1="10" y1="14" x2="21" y2="3"/>
-                                </svg>
-                            </button>
-                        </div>
+                       
                     </div>
                     
                     <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Spectra</h3>
@@ -1417,7 +1442,7 @@
                     </p>
                     
                     <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
-                        A dynamic chatbot interface built with Flutter featuring voice and text support, API integration, and custom datasets for comprehensive college information assistance.
+                        A dynamic chatbot interface built with python ui featuring voice and text support, API integration, and custom datasets for comprehensive college information assistance.
                     </p>
                     
                     <div style="margin-bottom: 1.5rem;">
@@ -1433,7 +1458,7 @@
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.5rem;">
                                 <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
-                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Dynamic UI components</span>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Static UI components</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.5rem;">
                                 <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
@@ -1458,24 +1483,11 @@
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                             </svg>
                         </div>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                            </button>
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                    <polyline points="15,3 21,3 21,9"/>
-                                    <line x1="10" y1="14" x2="21" y2="3"/>
-                                </svg>
-                            </button>
-                        </div>
+                       
                     </div>
                     
-                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Vital Chain</h3>
-                    <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
+                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;"><a href="https://github.com/roshanthomas582/vital_chain"  >Vital Chain</a></h3>
+                   <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
                         Hospital Management Software
                     </p>
                     
@@ -1502,6 +1514,14 @@
                                 <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
                                 <span style="font-size: 0.875rem; color: var(--muted-foreground);">Cloud integration</span>
                             </div>
+                             <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Dynamic UI components</span>
+                            </div>
+                             <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Slot Booking </span>
+                            </div>
                         </div>
                     </div>
                     
@@ -1524,20 +1544,7 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                             </svg>
                         </div>
-                        <div style="display: flex; gap: 0.5rem;">
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                            </button>
-                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
-                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
-                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                    <polyline points="15,3 21,3 21,9"/>
-                                    <line x1="10" y1="14" x2="21" y2="3"/>
-                                </svg>
-                            </button>
-                        </div>
+                       
                     </div>
                     
                     <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Personal Chat Application</h3>
@@ -1708,7 +1715,7 @@
                         </svg>
                     </a>
                     <a 
-                        href="#" 
+                        href="https://github.com/AJAYMOHAN3" 
                         class="social-link"
                         aria-label="GitHub"
                     >
@@ -1716,15 +1723,12 @@
                             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
                         </svg>
                     </a>
-                    <a 
-                        href="#" 
-                        class="social-link"
-                        aria-label="LinkedIn"
-                    >
-                        <svg class="icon" style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24">
-                            <path d="m4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-                        </svg>
-                    </a>
+                   <a href="https://instagram.com/_ajaymohan_" class="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+    <svg class="icon" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm8 2.25a.75.75 0 1 1 0 1.5.75.75 0 0 1 0-1.5zm-4.25 2a5 5 0 1 1 0 10a5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7a3.5 3.5 0 0 0 0-7z"/>
+    </svg>
+</a>
+
                 </div>
 
                 <div class="footer-divider">
