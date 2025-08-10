@@ -1733,9 +1733,9 @@ a.link:hover{
                     The best way to reach me is through email. I typically respond within 24 hours.
                 </p>
                 <a 
-                    href="mailto:ajaymohanmanimangalam@gmail.com"
-                    style="color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.3s ease;"
-                >
+  href="mailto:ajaymohanmanimangalam@gmail.com"
+  style="color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.3s ease;"
+>
                     ajaymohanmanimangalam@gmail.com
                 </a>
             </div>
@@ -1789,6 +1789,13 @@ a.link:hover{
     }
 
     @media (max-width: 768px) {
+        #contact-grid {
+            grid-template-columns: 1fr;
+            display: grid;
+            gap: 2rem;
+        }
+    }
+     @media (max-width: 640px) {
         #contact-grid {
             grid-template-columns: 1fr;
             display: grid;
