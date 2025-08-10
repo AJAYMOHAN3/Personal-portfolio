@@ -1,0 +1,1851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajay Mohan - Software Engineer Portfolio</title>
+    <meta name="description" content="Ajay Mohan's portfolio - Aspiring Software Engineer, Innovator, and Problem Solver specializing in Python, Java, Flutter, and full-stack development.">
+    <meta name="author" content="Ajay Mohan">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: hsl(240, 10%, 3.9%);
+            color: hsl(0, 0%, 100%);
+            line-height: 1.6;
+        }
+
+        /* Design System Colors */
+        :root {
+            --background: hsl(240, 10%, 3.9%);
+            --foreground: hsl(0, 0%, 100%);
+            --card: hsl(240, 10%, 3.9%);
+            --card-foreground: hsl(0, 0%, 98%);
+            --primary: hsl(221, 83%, 53%);
+            --primary-foreground: hsl(0, 0%, 100%);
+            --secondary: hsl(240, 3.7%, 15.9%);
+            --secondary-foreground: hsl(0, 0%, 98%);
+            --muted: hsl(240, 3.7%, 15.9%);
+            --muted-foreground: hsl(240, 5%, 64.9%);
+            --accent: hsl(175, 100%, 57%);
+            --accent-foreground: hsl(240, 10%, 3.9%);
+            --orange: hsl(25, 95%, 53%);
+            --orange-foreground: hsl(0, 0%, 100%);
+            --purple: hsl(262, 83%, 58%);
+            --purple-foreground: hsl(0, 0%, 100%);
+            --border: hsl(240, 3.7%, 15.9%);
+            --input: hsl(240, 3.7%, 15.9%);
+            --ring: hsl(221, 83%, 53%);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-padding {
+            padding: 5rem 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 5rem 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 5rem 4rem;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(175, 100%, 57%));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+        }
+
+        .gradient-accent {
+            background: linear-gradient(135deg, hsl(175, 100%, 57%), hsl(25, 95%, 53%));
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-30px); }
+            70% { transform: translateY(-15px); }
+            90% { transform: translateY(-4px); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        nav.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            color: var(--foreground);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font: inherit;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .nav-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23162447;stop-opacity:1" /><stop offset="50%" style="stop-color:%23243b55;stop-opacity:1" /><stop offset="100%" style="stop-color:%23141e30;stop-opacity:1" /></linearGradient></defs><rect width="1920" height="1080" fill="url(%23bg)"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .hero-bg-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .particle-1 {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: 50%;
+            filter: blur(3rem);
+            top: -12rem;
+            left: -12rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .particle-2 {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            background: rgba(20, 184, 166, 0.2);
+            border-radius: 50%;
+            filter: blur(3rem);
+            bottom: -12rem;
+            right: -12rem;
+            animation: float 3s ease-in-out infinite;
+            animation-delay: 1s;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            max-width: 64rem;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .hero-button {
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            font-weight: 500;
+        }
+
+        .hero-button-primary {
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+            color: white;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .hero-button-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .hero-button-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .hero-button-secondary:hover {
+            background: var(--accent);
+            color: var(--accent-foreground);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            padding: 0.75rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: var(--foreground);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: scale(1.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-button {
+            padding: 0.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--foreground);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .scroll-button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Card Styles */
+        .card {
+            background: rgba(51, 65, 85, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .icon-wrapper {
+            padding: 0.75rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-cols-1 {
+            grid-template-columns: 1fr;
+        }
+
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            color: var(--foreground);
+            transition: all 0.3s ease;
+            margin: 0.25rem;
+        }
+
+        .badge:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: var(--foreground);
+            font-size: 1rem;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+        }
+
+        .form-textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1.125rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
+        }
+
+        .form-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .form-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            max-width: 32rem;
+            margin: 0 auto;
+        }
+
+        /* Background Gradients */
+        .bg-secondary {
+            background: linear-gradient(180deg, var(--background), rgba(51, 65, 85, 0.5));
+        }
+
+        /* Timeline */
+        .timeline-item {
+            border-left: 2px solid rgba(59, 130, 246, 0.3);
+            padding-left: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        .timeline-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-badge {
+            font-size: 0.875rem;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(51, 65, 85, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-subtitle {
+            color: var(--muted-foreground);
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.875rem;
+            color: var(--muted-foreground);
+        }
+
+        .footer-tech {
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+            margin-top: 0.5rem;
+        }
+
+        /* Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .icon-sm {
+            width: 16px;
+            height: 16px;
+        }
+
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* Responsive Text */
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .text-5xl { font-size: 3rem; }
+
+        /* Spacing */
+        .mb-1 { margin-bottom: 0.25rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-16 { margin-top: 4rem; }
+
+        /* Text Colors */
+        .text-foreground { color: var(--foreground); }
+        .text-muted { color: var(--muted-foreground); }
+        .text-accent { color: var(--accent); }
+        .text-primary { color: var(--primary); }
+        .text-orange { color: var(--orange); }
+        .text-purple { color: var(--purple); }
+
+        /* Hover states for project cards */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .project-card-1::before {
+            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
+        }
+
+        .project-card-2::before {
+            background: linear-gradient(135deg, hsl(175, 100%, 57%), hsl(221, 83%, 53%));
+        }
+
+        .project-card-3::before {
+            background: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(175, 100%, 57%));
+        }
+
+        .project-card-4::before {
+            background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(25, 95%, 53%));
+        }
+
+        /* Animation delays for staggered effects */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+
+        /* Mobile menu (if needed later) */
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+        }
+
+        .profile-pic {
+            position: fixed;
+            top: 65px;  /* Distance from top */
+            left: 50px; /* Distance from left */
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* Makes it round */
+            object-fit: cover;  /* Keeps aspect ratio */
+            border: 3px solid rgb(49, 36, 217);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 9999; /* Always on top */
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+    </style>
+</head>
+<body>
+     <img src="IMG_20210418_073742.jpg" alt="Profile Picture" class="profile-pic">
+    
+    <div style="height:0px;">
+       
+       
+    </div>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-logo gradient-text">
+                    Ajay Mohan
+                </div>
+                
+                <div class="nav-links">
+                    <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+                    <button class="nav-link" onclick="scrollToSection('about')">About</button>
+                    <button class="nav-link" onclick="scrollToSection('skills')">Skills</button>
+                    <button class="nav-link" onclick="scrollToSection('services')">Services</button>
+                    <button class="nav-link" onclick="scrollToSection('projects')">Projects</button>
+                    <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Animated background particles -->
+        <div class="hero-bg-particles">
+            <div class="particle-1"></div>
+            <div class="particle-2"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Ajay Mohan</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Aspiring Software Engineer | Innovator | Problem Solver
+                </p>
+                
+                <div class="hero-description">
+                    <p>
+                        Passionate about developing efficient, user-focused digital solutions. 
+                        Skilled in Python, Java, Dart, and Flutter with hands-on experience in 
+                        frontend and backend development, UI/UX design, and API integration.
+                    </p>
+                </div>
+
+                <div class="hero-buttons">
+                    <button class="hero-button hero-button-primary" onclick="scrollToSection('projects')">
+                        View My Work
+                    </button>
+                    <button class="hero-button hero-button-secondary" onclick="scrollToSection('contact')">
+                        Get In Touch
+                    </button>
+                </div>
+
+                <div class="social-links">
+                    <a href="mailto:ajaymohanmanimangalam@gmail.com" class="social-link" aria-label="Email">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="m4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="m4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <button class="scroll-button" onclick="scrollToSection('about')" aria-label="Scroll to About">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <polyline points="6,9 12,15 18,9"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text">About Me</h2>
+                <p class="section-description">
+                    Driven by curiosity and a passion for technology, I'm constantly learning and building innovative solutions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2" style="max-width: 96rem; margin: 0 auto;">
+                <!-- Education Card -->
+                <div class="card animate-fade-in">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(59, 130, 246, 0.2);">
+                                <svg class="icon" style="color: var(--primary);" viewBox="0 0 24 24">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Education</h3>
+                        </div>
+                    </div>
+                    <div style="space-y: 1.5rem;">
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <svg class="icon icon-sm text-accent" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                <span class="timeline-badge">Oct 2022 - May 2026</span>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--foreground); margin-bottom: 0.5rem;">
+                                Bachelor of Technology in Computer Science & Engineering
+                            </h4>
+                            <p class="text-muted">
+                                St. Joseph's College of Engineering and Technology, Palai
+                            </p>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-date">
+                                <svg class="icon icon-sm text-accent" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                    <line x1="16" y1="2" x2="16" y2="6"/>
+                                    <line x1="8" y1="2" x2="8" y2="6"/>
+                                    <line x1="3" y1="10" x2="21" y2="10"/>
+                                </svg>
+                                <span class="timeline-badge">2020 - 2022</span>
+                            </div>
+                            <h4 style="font-weight: 600; color: var(--foreground); margin-bottom: 0.5rem;">
+                                Higher Secondary Education
+                            </h4>
+                            <p class="text-muted">
+                                Bhavans Newsprint Vidyalaya, Velloor
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Card -->
+                <div class="card animate-fade-in delay-1">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(20, 184, 166, 0.2);">
+                                <svg class="icon" style="color: var(--accent);" viewBox="0 0 24 24">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                    <line x1="8" y1="21" x2="16" y2="21"/>
+                                    <line x1="12" y1="17" x2="12" y2="21"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Experience</h3>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            <svg class="icon icon-sm text-primary" viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            <span style="font-size: 0.875rem; color: var(--primary);">Internship</span>
+                        </div>
+                        <h4 style="font-weight: 600; color: var(--foreground); margin-bottom: 0.5rem;">
+                            Internship Trainee
+                        </h4>
+                        <p style="color: var(--accent); margin-bottom: 0.75rem;">Keltron, Palai</p>
+                        <p class="text-muted">
+                            Gained foundational knowledge and practical skills in Python programming, 
+                            UI frontend development, and DBMS backend operations through hands-on projects 
+                            and mentorship.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16" style="text-align: center;">
+                <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2); max-width: 64rem; margin: 0 auto;">
+                    <div style="padding: 2rem;">
+                        <h3 class="text-2xl gradient-text mb-4" style="font-weight: 700;">My Journey</h3>
+                        <p style="font-size: 1.125rem; color: var(--muted-foreground); line-height: 1.7;">
+                            From discovering the world of programming to building complex applications, 
+                            my journey has been fueled by endless curiosity and a desire to solve real-world problems. 
+                            I believe in the power of technology to transform ideas into impactful solutions, 
+                            and I'm excited to contribute to this ever-evolving field.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text">Technical Skills</h2>
+                <p class="section-description">
+                    A comprehensive toolkit built through continuous learning and hands-on experience.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2" style="max-width: 96rem; margin: 0 auto;">
+                <!-- Programming Languages -->
+                <div class="card animate-fade-in">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(59, 130, 246, 0.2);">
+                                <svg class="icon" style="color: var(--primary);" viewBox="0 0 24 24">
+                                    <polyline points="16,18 22,12 16,6"/>
+                                    <polyline points="8,6 2,12 8,18"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Programming Languages</h3>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Python</span>
+                        <span class="badge">Java</span>
+                        <span class="badge">C</span>
+                        <span class="badge">Dart (Flutter)</span>
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">SQL (MySQL)</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Tools -->
+                <div class="card animate-fade-in delay-1">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(20, 184, 166, 0.2);">
+                                <svg class="icon" style="color: var(--accent);" viewBox="0 0 24 24">
+                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Frameworks & Tools</h3>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Flutter</span>
+                        <span class="badge">Android Studio</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">VS Code</span>
+                        <span class="badge">RESTful APIs</span>
+                        <span class="badge">Browser Extensions</span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="card animate-fade-in delay-2">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(249, 115, 22, 0.2);">
+                                <svg class="icon" style="color: var(--orange);" viewBox="0 0 24 24">
+                                    <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                    <path d="M5 12c0 1.657 3.134 3 7 3s7-1.343 7-3"/>
+                                    <path d="M5 5v14c0 1.657 3.134 3 7 3s7-1.343 7-3V5"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Databases</h3>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">MySQL</span>
+                        <span class="badge">Firebase</span>
+                        <span class="badge">DBMS Operations</span>
+                        <span class="badge">Data Management</span>
+                    </div>
+                </div>
+
+                <!-- Core Concepts -->
+                <div class="card animate-fade-in delay-3">
+                    <div class="card-header">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                            <div class="icon-wrapper" style="background: rgba(147, 51, 234, 0.2);">
+                                <svg class="icon" style="color: var(--purple);" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/>
+                                    <circle cx="12" cy="17" r=".5"/>
+                                </svg>
+                            </div>
+                            <h3 class="card-title">Core Concepts</h3>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Frontend/Backend Development</span>
+                        <span class="badge">UI/UX Design</span>
+                        <span class="badge">API Integration</span>
+                        <span class="badge">OOP</span>
+                        <span class="badge">Data Hashing (SHA-256)</span>
+                        <span class="badge">Problem Solving</span>
+                        <span class="badge">Team Collaboration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16" style="text-align: center;">
+                <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2); max-width: 64rem; margin: 0 auto;">
+                    <div style="padding: 2rem;">
+                        <h3 class="text-2xl gradient-text mb-4" style="font-weight: 700;">Always Learning</h3>
+                        <p style="font-size: 1.125rem; color: var(--muted-foreground);">
+                            Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, 
+                            languages, and methodologies to stay at the forefront of software development.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-padding bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text">Services</h2>
+                <p class="section-description">
+                    Comprehensive solutions tailored to bring your digital ideas to life with cutting-edge technology.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-3" style="max-width: 112rem; margin: 0 auto;">
+                <!-- UI/UX Design -->
+                <div class="card animate-fade-in project-card project-card-1">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">UI/UX Design</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Intuitive, user-friendly, and visually appealing designs for web and mobile applications that enhance user experience.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">User Research</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Wireframing</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Prototyping</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Visual Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div class="card animate-fade-in delay-1 project-card project-card-2">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(175, 100%, 57%), hsl(221, 83%, 53%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">Web Development</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Responsive and functional websites built with modern technologies and best practices for optimal performance.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Responsive Design</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Frontend Development</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Performance Optimization</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Cross-browser Compatibility</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile App Development -->
+                <div class="card animate-fade-in delay-2 project-card project-card-3">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(175, 100%, 57%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+                                <line x1="12" y1="18" x2="12.01" y2="18"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">Mobile App Development</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Cross-platform Android/iOS applications using Flutter, delivering native performance with a single codebase.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Flutter Development</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Cross-platform</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Native Performance</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">App Store Deployment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Database Management -->
+                <div class="card animate-fade-in delay-3 project-card project-card-4">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(25, 95%, 53%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                                <path d="M5 12c0 1.657 3.134 3 7 3s7-1.343 7-3"/>
+                                <path d="M5 5v14c0 1.657 3.134 3 7 3s7-1.343 7-3V5"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">Database Management</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Efficient MySQL and Firebase solutions for data storage, retrieval, and management with optimal performance.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">MySQL</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Firebase</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Data Modeling</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Query Optimization</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Integration -->
+                <div class="card animate-fade-in delay-4 project-card project-card-1">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(175, 100%, 57%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M20 16v-2a4 4 0 0 0-4-4H4a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4z"/>
+                                <circle cx="6" cy="16" r="1"/>
+                                <circle cx="18" cy="16" r="1"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">API Integration</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Secure and efficient integration with external services and APIs to extend application functionality.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">RESTful APIs</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Authentication</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Data Synchronization</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Third-party Services</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Development -->
+                <div class="card animate-fade-in delay-4 project-card project-card-2">
+                    <div class="card-header">
+                        <div style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, hsl(175, 100%, 57%), hsl(262, 83%, 58%)); padding: 1rem; margin-bottom: 1rem; transition: transform 0.3s ease;">
+                            <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                                <polyline points="16,18 22,12 16,6"/>
+                                <polyline points="8,6 2,12 8,18"/>
+                            </svg>
+                        </div>
+                        <h3 class="card-title" style="transition: color 0.3s ease;">Custom Development</h3>
+                    </div>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Tailored software solutions including browser extensions, chatbots, and specialized applications.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Browser Extensions</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Chatbot Development</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Custom Solutions</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                            <span style="font-size: 0.875rem; color: var(--muted-foreground);">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16" style="text-align: center;">
+                <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2); max-width: 64rem; margin: 0 auto;">
+                    <div style="padding: 2rem;">
+                        <h3 class="text-2xl gradient-text mb-4" style="font-weight: 700;">Let's Build Something Amazing</h3>
+                        <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 1.5rem;">
+                            Every project is unique, and I'm here to provide customized solutions that meet your specific needs. 
+                            From concept to deployment, I ensure quality and innovation in every step.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text">Featured Projects</h2>
+                <p class="section-description">
+                    A showcase of innovative solutions demonstrating technical expertise and creative problem-solving.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2" style="max-width: 112rem; margin: 0 auto;">
+                <!-- Smart India Hackathon Project -->
+                <div class="card animate-fade-in project-card project-card-1">
+                    <div style="display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%)); padding: 0.75rem; transition: transform 0.3s ease;">
+                            <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </button>
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Smart India Hackathon Project</h3>
+                    <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
+                        Browser Extension for File Management
+                    </p>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        An innovative browser extension that prevents redundant file downloads by using SHA-256 hashing from file metadata,
+                        optimizing storage and improving user efficiency.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--foreground); margin-bottom: 1rem;">Key Features:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Prevents duplicate downloads</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Advanced hashing algorithms</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Metadata analysis</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Storage optimization</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Browser Extension</span>
+                        <span class="badge">SHA-256</span>
+                        <span class="badge">File Management</span>
+                        <span class="badge">JavaScript</span>
+                    </div>
+                </div>
+
+                <!-- Spectra -->
+                <div class="card animate-fade-in delay-2 project-card project-card-2">
+                    <div style="display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, hsl(175, 100%, 57%), hsl(221, 83%, 53%)); padding: 0.75rem; transition: transform 0.3s ease;">
+                            <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </button>
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Spectra</h3>
+                    <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
+                        College Information Chatbot UI
+                    </p>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        A dynamic chatbot interface built with Flutter featuring voice and text support, API integration, and custom datasets for comprehensive college information assistance.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--foreground); margin-bottom: 1rem;">Key Features:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Voice & text support</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Custom dataset integration</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Dynamic UI components</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Real-time responses</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Flutter</span>
+                        <span class="badge">Chatbot</span>
+                        <span class="badge">Voice Recognition</span>
+                        <span class="badge">API Integration</span>
+                    </div>
+                </div>
+
+                <!-- Vital Chain -->
+                <div class="card animate-fade-in delay-3 project-card project-card-3">
+                    <div style="display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, hsl(25, 95%, 53%), hsl(175, 100%, 57%)); padding: 0.75rem; transition: transform 0.3s ease;">
+                            <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                            </svg>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </button>
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Vital Chain</h3>
+                    <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
+                        Hospital Management Software
+                    </p>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        Comprehensive healthcare management system with AI chatbot, patient record management, BMI calculator, and Firebase integration for seamless data handling.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--foreground); margin-bottom: 1rem;">Key Features:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">AI-powered assistance</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Patient record system</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">BMI calculator</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Cloud integration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Healthcare</span>
+                        <span class="badge">AI Chatbot</span>
+                        <span class="badge">Firebase</span>
+                        <span class="badge">Patient Management</span>
+                    </div>
+                </div>
+
+                <!-- Personal Chat Application -->
+                <div class="card animate-fade-in delay-4 project-card project-card-4">
+                    <div style="display: flex; align-items: start; justify-content: space-between; margin-bottom: 1rem;">
+                        <div style="width: 3.5rem; height: 3.5rem; border-radius: 0.75rem; background: linear-gradient(135deg, hsl(262, 83%, 58%), hsl(25, 95%, 53%)); padding: 0.75rem; transition: transform 0.3s ease;">
+                            <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </button>
+                            <button style="height: 2rem; width: 2rem; padding: 0; background: transparent; border: none; color: var(--foreground); cursor: pointer; border-radius: 0.25rem; display: flex; align-items: center; justify-content: center; transition: background 0.3s ease;">
+                                <svg class="icon" style="width: 1rem; height: 1rem;" viewBox="0 0 24 24">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                    <polyline points="15,3 21,3 21,9"/>
+                                    <line x1="10" y1="14" x2="21" y2="3"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <h3 class="card-title mb-2" style="transition: color 0.3s ease;">Personal Chat Application</h3>
+                    <p style="color: var(--accent); font-weight: 500; font-size: 0.875rem; margin-bottom: 1rem;">
+                        Real-time Communication Platform
+                    </p>
+                    
+                    <p style="color: var(--muted-foreground); margin-bottom: 1.5rem; line-height: 1.7;">
+                        A feature-rich chat application built with Flutter and Firebase, offering authentication, chat listing, voice messaging, and real-time synchronization.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 0.875rem; font-weight: 600; color: var(--foreground); margin-bottom: 1rem;">Key Features:</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">User authentication</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Real-time messaging</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Voice message support</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                <span style="font-size: 0.875rem; color: var(--muted-foreground);">Cross-platform sync</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge">Flutter</span>
+                        <span class="badge">Firebase</span>
+                        <span class="badge">Real-time</span>
+                        <span class="badge">Voice Messaging</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16" style="text-align: center;">
+                <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2); max-width: 64rem; margin: 0 auto;">
+                    <div style="padding: 2rem;">
+                        <h3 class="text-2xl gradient-text mb-4" style="font-weight: 700;">More Projects Coming Soon</h3>
+                        <p style="font-size: 1.125rem; color: var(--muted-foreground); margin-bottom: 1.5rem;">
+                            I'm constantly working on new and exciting projects. Each one presents unique challenges 
+                            and opportunities to learn, grow, and push the boundaries of what's possible.
+                        </p>
+                        <button 
+                            class="hero-button hero-button-primary"
+                            onclick="window.open('mailto:ajaymohanmanimangalam@gmail.com', '_blank')"
+                        >
+                            Collaborate With Me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title gradient-text">Get In Touch</h2>
+                <p class="section-description">
+                    Ready to collaborate on your next project? Let's discuss how we can bring your ideas to life.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2" style="max-width: 96rem; margin: 0 auto; gap: 3rem;">
+                <!-- Contact Information -->
+                <div style="display: flex; gap: 2rem; align-items: flex-start;">
+    <div style="flex: 1;" class="card">
+        <div class="card-header">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <div class="icon-wrapper" style="background: rgba(59, 130, 246, 0.2);">
+                    <svg class="icon" style="color: var(--primary);" viewBox="0 0 24 24">
+                        <path d="m4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Email Me</h3>
+            </div>
+        </div>
+        <p style="color: var(--muted-foreground); margin-bottom: 1rem;">
+            The best way to reach me is through email. I typically respond within 24 hours.
+        </p>
+        <a 
+            href="mailto:ajaymohanmanimangalam@gmail.com"
+            style="color: var(--accent); text-decoration: none; font-weight: 500; transition: color 0.3s ease;"
+        >
+            ajaymohanmanimangalam@gmail.com
+        </a>
+    </div>
+
+    <div style="flex: 1;" class="card">
+        <div class="card-header">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                <div class="icon-wrapper" style="background: rgba(20, 184, 166, 0.2);">
+                    <svg class="icon" style="color: var(--accent);" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Let's Collaborate</h3>
+            </div>
+        </div>
+        <p style="color: var(--muted-foreground);">
+            Whether you have a project in mind, need technical consultation, or want to discuss 
+            potential opportunities, I'm always open to meaningful conversations.
+        </p>
+    </div>
+</div>
+
+
+                    <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(20, 184, 166, 0.1)); border-color: rgba(59, 130, 246, 0.2);">
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.125rem; font-weight: 600; margin-bottom: 0.75rem;" class="gradient-text">What I Can Help With:</h3>
+                            <ul style="space-y: 0.5rem; color: var(--muted-foreground);">
+                                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                    Web & Mobile App Development
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                    UI/UX Design & Consultation
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                    API Integration & Backend Solutions
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.5rem;">
+                                    <div style="width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--accent);"></div>
+                                    Technical Mentoring & Code Review
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="mb-8">
+                    <h3 class="footer-title gradient-text">Ajay Mohan</h3>
+                    <p class="footer-subtitle">
+                        Aspiring Software Engineer | Innovator | Problem Solver
+                    </p>
+                </div>
+
+                <div class="footer-social">
+                    <a 
+                        href="mailto:ajaymohanmanimangalam@gmail.com" 
+                        class="social-link"
+                        aria-label="Email"
+                    >
+                        <svg class="icon" style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24">
+                            <path d="m4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-16c-1.1 0-2-.9-2-2v-12c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                    <a 
+                        href="#" 
+                        class="social-link"
+                        aria-label="GitHub"
+                    >
+                        <svg class="icon" style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                        </svg>
+                    </a>
+                    <a 
+                        href="#" 
+                        class="social-link"
+                        aria-label="LinkedIn"
+                    >
+                        <svg class="icon" style="width: 1.25rem; height: 1.25rem;" viewBox="0 0 24 24">
+                            <path d="m4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-divider">
+                    <p class="footer-copyright">
+                        © 2024 Ajay Mohan. All rights reserved.
+                    </p>
+                    <p class="footer-tech">
+                        Built with HTML,CSS
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                alert('Message sent successfully! Thank you for your message. I\'ll get back to you soon.');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Reset button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalText;
+            }, 1000);
+        }
+
+        // Add animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial state for animated elements
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+            
+            // Trigger initial animation check
+            animateOnScroll();
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Add hover effects to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add hover effects to service cards
+            const serviceCards = document.querySelectorAll('.project-card');
+            serviceCards.forEach(card => {
+                const icon = card.querySelector('[style*="transition: transform"]');
+                const title = card.querySelector('.card-title');
+                
+                card.addEventListener('mouseenter', function() {
+                    if (icon) icon.style.transform = 'scale(1.1)';
+                    if (title) title.style.color = 'var(--accent)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (icon) icon.style.transform = 'scale(1)';
+                    if (title) title.style.color = 'var(--foreground)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
