@@ -1720,7 +1720,7 @@ a.link:hover{
             </p>
         </div>
 
-        <div class="grid grid-cols-2" style="max-width: 96rem; margin: 0 auto; gap: 3rem;">
+        <div id="contact-top-grid" style="max-width: 96rem; margin: 0 auto;">
             <div class="card">
                 <div class="card-header">
                      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
@@ -1792,7 +1792,7 @@ a.link:hover{
                     <p style="color: var(--muted-foreground); margin-bottom: 1rem; font-size: 1.125rem;">
                         The best way to reach me is through email. I typically respond within 24 hours.
                     </p>
-                    <a href="mailto:ajaymohanmanimangalam@gmail.com" class="link" style="font-size: 1.125rem; font-weight: 600;">
+                    <a href="mailto:ajaymohanmanimangalam@gmail.com" class="link" style="font-size: 1.125rem; font-weight: 600; overflow-wrap: break-word;">
                         ajaymohanmanimangalam@gmail.com
                     </a>
                 </div>
@@ -1800,6 +1800,21 @@ a.link:hover{
         </div>
     </div>
 </section>
+
+<style>
+    #contact-top-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem; /* Adjusted gap for better spacing */
+    }
+
+    /* Media Query for mobile devices */
+    @media (max-width: 768px) {
+        #contact-top-grid {
+            grid-template-columns: 1fr; /* Stack the columns */
+        }
+    }
+</style>
 
     <!-- Footer -->
     <footer>
