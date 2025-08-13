@@ -386,24 +386,25 @@
             transform: scale(1.1);
         }
 
-       .scroll-indicator {
-    position: fixed; /* stays in place */
-    bottom: 1rem; /* distance from bottom of screen */
-    left: 48.5%; /* center horizontally */
-    transform: translateX(-50%);
-    animation: bounce 2s infinite;
-    z-index: 1000; /* make sure it stays above other content */
-}
+      .scroll-indicator {
+            position: absolute;
+            bottom: 1rem;
+            left: 48.5%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            
+        }
 
-.scroll-button {
-    padding: 0.5rem;
-    border: 1px solid rgba(241, 232, 232, 0.2);
-    border-radius: 50%;
-    background: transparent;
-    color: var(--foreground);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
+    .scroll-button {
+            padding: 0.5rem;
+            border: 1px solid rgba(241, 232, 232, 0.2);
+            border-radius: 50%;
+            background: transparent;
+            color: var(--foreground);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+        }
 
 @media (max-width: 768px) {
     .scroll-indicator {
