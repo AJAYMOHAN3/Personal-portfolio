@@ -270,6 +270,13 @@
             margin-bottom: 1.5rem;
         }
 @media (max-width: 480px){
+   .nav-content{
+    height: 20px;
+   }
+     .hero-content {
+        margin-top: 5px;
+     }
+
     .hero-title {
          text-align:relative;
          padding-left: 15%;
@@ -377,11 +384,12 @@
         }
 
         .scroll-indicator {
-            position: absolute;
+            position: relative;
             bottom: 1rem;
             left: 48.5%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+            
         }
 
     .scroll-button {
@@ -392,14 +400,17 @@
             color: var(--foreground);
             cursor: pointer;
             transition: all 0.3s ease;
+            
         }
 @media (max-width: 768px) {
     .scroll-indicator {
-            position: absolute;
-            bottom: 5rem;
+           
+         position: relative;
+            bottom: 1rem;
             left: 48.5%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+            
         }
 
     .scroll-button {
@@ -410,6 +421,7 @@
             color: var(--foreground);
             cursor: pointer;
             transition: all 0.3s ease;
+            
         }
 }
 
@@ -509,64 +521,7 @@
             transform: scale(1.05);
         }
 
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--foreground);
-            margin-bottom: 0.5rem;
-        }
-
-        .form-input, .form-textarea {
-            width: 100%;
-            padding: 0.75rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 0.5rem;
-            color: var(--foreground);
-            font-size: 1rem;
-        }
-
-        .form-input:focus, .form-textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
-        }
-
-        .form-textarea {
-            resize: none;
-            height: 150px;
-        }
-
-        .form-button {
-            width: 100%;
-            padding: 0.75rem;
-            background: linear-gradient(135deg, hsl(221, 83%, 53%), hsl(262, 83%, 58%));
-            color: white;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1.125rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 40px rgba(59, 130, 246, 0.3);
-        }
-
-        .form-button:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .form-button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
+       
 
         /* Section Headers */
         .section-header {
