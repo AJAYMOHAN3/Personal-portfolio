@@ -779,6 +779,47 @@ a.link:hover{
     text-decoration: underline;
    text-decoration-color: rgb(38, 8, 208);
 }
+/* Base styles */
+#navbar {
+  background: #0d1b2a; /* Darkish blue */
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Hamburger icon styles */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -789,25 +830,35 @@ a.link:hover{
        
     </div>
     <!-- Navigation -->
-    <nav id="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <div class="nav-logo gradient-text">
-                    Ajay Mohan
-                </div>
-                
-                <div class="nav-links">
-                    <button class="nav-link" onclick="scrollToSection('home')">Home</button>
-                    <button class="nav-link" onclick="scrollToSection('about')">About</button>
-                    <button class="nav-link" onclick="scrollToSection('skills')">Skills</button>
-                    <button class="nav-link" onclick="scrollToSection('Achievements')">Achievements</button>
-                    <button class="nav-link" onclick="scrollToSection('services')">Services</button>
-                    <button class="nav-link" onclick="scrollToSection('projects')">Projects</button>
-                    <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
-                </div>
-            </div>
-        </div>
-    </nav>
+   <nav id="navbar">
+  <div class="container">
+    <div class="nav-content">
+      <div class="nav-logo gradient-text">
+        Ajay Mohan
+      </div>
+
+      <!-- Hamburger Menu Icon -->
+      <div class="hamburger" onclick="toggleMenu()">
+        ☰
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <button class="nav-link" onclick="scrollToSection('home')">Home</button>
+        <button class="nav-link" onclick="scrollToSection('about')">About</button>
+        <button class="nav-link" onclick="scrollToSection('skills')">Skills</button>
+        <button class="nav-link" onclick="scrollToSection('Achievements')">Achievements</button>
+        <button class="nav-link" onclick="scrollToSection('services')">Services</button>
+        <button class="nav-link" onclick="scrollToSection('projects')">Projects</button>
+        <button class="nav-button" onclick="scrollToSection('contact')">Contact</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('show');
+  }
+</script>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
